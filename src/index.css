@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 150 12% 6%;
+  --foreground: 150 10% 94%;
+  --card: 150 11% 9%;
+  --card-foreground: 150 10% 94%;
+  --primary: 142 30% 50%;
+  --primary-foreground: 150 20% 6%;
+  --secondary: 150 10% 14%;
+  --secondary-foreground: 150 10% 94%;
+  --muted: 150 10% 16%;
+  --muted-foreground: 150 8% 62%;
+  --accent: 142 24% 18%;
+  --accent-foreground: 150 30% 92%;
+  --border: 150 10% 18%;
+  --input: 150 10% 16%;
+  --ring: 142 30% 50%;
+  --radius: 1rem;
+  --sidebar-background: 150 12% 7%;
+  color-scheme: dark;
+}
+
+* { border-color: hsl(var(--border)); }
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display { font-family: "Fraunces", ui-serif, Georgia, serif; letter-spacing: -0.01em; }
+
+.glass {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background: linear-gradient(#161d1ab3, #101412b3);
+}
+.card-elevated {
+  background: #141917;
+  border: 1px solid #252d29;
+  box-shadow: inset 0 1px #20272499, 0 18px 40px -24px #000000b3;
+}
+.accent-grad { background: linear-gradient(135deg, #54ab74, #478566); }
+
+.chip {
+  color: #dde3e0; background: #1c221f; border: 1px solid #2e3833; border-radius: 9999px;
+  display: inline-flex; align-items: center; gap: .375rem; padding: .375rem .75rem;
+  font-size: .875rem; font-weight: 500; line-height: 1.25rem; transition: all .18s;
+}
+.chip:hover { border-color: #3c4942; }
+.chip-active { color: #b8e0c7; background: #1f3326; border-color: #50956a; }
+
+.input {
+  width: 100%; border-radius: 1rem; background: hsl(150 11% 9%); border: 1px solid hsl(150 10% 18%);
+  padding: .7rem 1rem; font-size: .9rem; outline: none; color: inherit;
+}
+.input:focus { border-color: hsl(142 40% 45%); }
+.input::placeholder { color: hsl(150 8% 50%); }
+
+.fade-in { animation: fadeIn .4s both; }
+.rise-in { animation: riseIn .45s cubic-bezier(.22,1,.36,1) both; }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes riseIn { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes scanline { 0% { top: 0 } 50% { top: 155px } 100% { top: 0 } }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2e3833; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.text-brand { color: hsl(142 40% 68%); }
